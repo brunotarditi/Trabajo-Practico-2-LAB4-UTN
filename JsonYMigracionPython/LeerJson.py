@@ -39,7 +39,7 @@ for codigo in range(1, 300):
             poblacion = i['population']
             latitud = i['latlng'][0]
             longitud = i['latlng'][1]
-            existePais = cursor.execute("SELECT * FROM pais WHERE codigo_pais = ?", [codigoPais])
+            cursor.execute("SELECT * FROM pais WHERE codigo_pais = ?", [codigoPais])
             existePais = cursor.fetchone()
             if existePais is not None:
                 cursor.execute("UPDATE pais SET "
